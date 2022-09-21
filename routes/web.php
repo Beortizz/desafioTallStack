@@ -20,7 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/players', function() {
-    return view('players.player');
+    return view('player.load-player');
+});
+
+
+Route::get('/teams', function() {
+    return view('teams.load-team');
 });
 
 // Route::get('/players/edit/{player}', EditPlayer::class);

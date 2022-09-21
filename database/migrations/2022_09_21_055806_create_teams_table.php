@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('pais_origem');
+            $table->integer('pontuacao');
+            $table->integer('vitorias');
+            $table->integer('derrotas');
+            $table->string('jogadores');
+            $table->string('campeonatos');
+            
             $table->timestamps();
         });
     }

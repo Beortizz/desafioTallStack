@@ -4,9 +4,9 @@
             <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
             <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
             @if($updateMode)
-                @include('livewire.update')
+                @include('livewire.update_player')
             @else
-                @include('livewire.create')
+                @include('livewire.create_player')
             @endif
             
             

@@ -2,6 +2,4 @@
 
 @section('content') 
     @livewire('create-player') 
-
-    {{-- @include('players.index') --}}
-@endsection
+@endsection 

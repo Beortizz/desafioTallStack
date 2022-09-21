@@ -33,7 +33,7 @@ class CreatePlayer extends Component
     public function render()
     {
         $this->players = Player::all();
-        return view('livewire.create-player');
+        return view('livewire.players');
     }
 
     public function edit($id)
