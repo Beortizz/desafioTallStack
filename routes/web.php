@@ -1,5 +1,7 @@
 <?php
-
+use App\Models\Player;
+use App\Http\Livewire\CreatePlayer;    
+use App\Http\Livewire\EditPlayer;    
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/players', function() {
+    return view('players.player');
+});
+
+// Route::get('/players/edit/{player}', EditPlayer::class);
+// Route::get('/index', CreatePlayer::class);
