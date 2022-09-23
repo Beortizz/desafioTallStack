@@ -221,7 +221,9 @@
                                 border-b border-r border-[#E8E8E8]
                                 "
                                 > 
-                                   {{ $team->jogadores }}
+                                @foreach($team->players as $player)
+                                    {{ $player->nome }}
+                                 @endforeach
                              </td>
                              <td
                              class="

@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('players', function (Blueprint $table) {
+        //
+        Schema::create('championships_teams', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->integer('idade');
-            $table->string('nacionalidade');
-            $table->integer('vitorias');
-            $table->integer('derrotas');
-            $table->unsignedBigInteger('time_id')->nullable();
-            $table->foreign('time_id')->references('id')->on('teams');
-            
             $table->timestamps();
+            // Produtos 
+            $table->unsignedBigInteger('time_id');
+            $table->foreign('time_id')->references('id')->on('teams');
+            $table->unsignedBigInteger('campeonato_id');
+            $table->foreign('campeonato_id')->references('id')->on('championships');   
         });
     }
 
@@ -34,6 +32,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('players');
+        //
+        Schema::dropIfExists('championships_teams');
     }
 };

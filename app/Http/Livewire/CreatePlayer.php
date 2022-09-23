@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\Player;
+
+use App\Models\Team;
 use Livewire\Component;
 
 class CreatePlayer extends Component
@@ -16,7 +18,13 @@ class CreatePlayer extends Component
     public $vitorias;
     public $time;
     public $updateMode = false;
+    public $teams;  
     
+
+    public function mount()
+    {
+        $this->teams = Team::all();
+    }
     public function submit(){
         Player::create([
           'nome' => $this->nome,
@@ -24,7 +32,7 @@ class CreatePlayer extends Component
           'nacionalidade' => $this->nacionalidade,
           'derrotas' => $this->derrotas,
           'vitorias' => $this->vitorias,   
-          'time' => $this->time
+          'time_id' => $this->time
           
         ]);
         $this->reset();
@@ -32,7 +40,7 @@ class CreatePlayer extends Component
     }
     public function render()
     {
-        $this->players = Player::all();
+        $this->players = Player::with('team')->get();
         return view('livewire.players');
     }
 
@@ -67,7 +75,7 @@ class CreatePlayer extends Component
             'nacionalidade' => $this->nacionalidade,
             'derrotas' => $this->derrotas,  
             'vitorias' => $this->vitorias,
-            'time' => $this->time,
+            'time_id' => $this->time,
         ]);
   
         $this->updateMode = false;

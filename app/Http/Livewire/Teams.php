@@ -14,7 +14,7 @@ class Teams extends Component
         public $pontuacao;
         public $vitorias;
         public $derrotas;
-        public $jogadores;
+        // public $jogadores;
         public $campeonatos;
         public $updateMode = false;
         
@@ -25,7 +25,7 @@ class Teams extends Component
                 'pontuacao' => $this->pontuacao,
                 'vitorias' => $this->vitorias,
                 'derrotas' => $this->derrotas,
-                'jogadores' => $this->jogadores,
+                // 'jogadores' => $this->jogadores,
                 'campeonatos' => $this->campeonatos,
               
             ]);
@@ -47,7 +47,7 @@ class Teams extends Component
             $this->pontuacao = $team->pontuacao;
             $this->derrotas = $team->derrotas;
             $this->vitorias = $team->vitorias;
-            $this->jogadores = $team->jogadores;
+            // $this->jogadores = $team->jogadores;
             $this->campeonatos = $team->campeonatos;
             
       
@@ -71,7 +71,7 @@ class Teams extends Component
                 'pontuacao' => $this->pontuacao,
                 'vitorias' => $this->vitorias,
                 'derrotas' => $this->derrotas,
-                'jogadores' => $this->jogadores,
+                // 'jogadores' => $this->jogadores,
                 'campeonatos' => $this->campeonatos
             ]);
       

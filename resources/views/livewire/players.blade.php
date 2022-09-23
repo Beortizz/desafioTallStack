@@ -9,7 +9,6 @@
                 @include('livewire.create_player')
             @endif
             
-            
             <section class="bg-white py-20 lg:py-[120px]">
                 <div class="container">
                    <div class="flex flex-wrap -mx-4">
@@ -130,6 +129,8 @@
                                </thead>
                                <tbody>
                                  @foreach($players as $player)
+
+                                 {{-- @dd($player->teams) --}}
                                   <tr>
                                      <td
                                         class="
@@ -207,7 +208,10 @@
                                         border-b border-r border-[#E8E8E8]
                                         "
                                         > 
-                                           {{ $player->time }}
+                                      
+                                          
+                                           {{ $player->team->nome}}
+                           
                                      </td>
                                      <td
                                      class="
