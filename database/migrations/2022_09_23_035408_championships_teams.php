@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('championships_teams', function (Blueprint $table) {
+        Schema::create('championship_team', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             // Produtos 
-            $table->unsignedBigInteger('time_id');
-            $table->foreign('time_id')->references('id')->on('teams');
-            $table->unsignedBigInteger('campeonato_id');
-            $table->foreign('campeonato_id')->references('id')->on('championships');   
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->unsignedBigInteger('championship_id');
+            $table->foreign('championship_id')->references('id')->on('championships')->onDelete('cascade');   
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('championships_teams');
+        Schema::dropIfExists('championship_team');
     }
 };

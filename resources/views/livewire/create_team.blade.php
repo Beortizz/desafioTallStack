@@ -27,16 +27,17 @@
                 <input type="number" wire:model="vitorias" id="vitorias" autocomplete="vitorias" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300">
                 {{-- @error('about') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror --}}
             </div>
-            <div class="col-span-2">
-                <label for="jogadores" class="text-sm font-medium text-gray-700">Jogadores</label>
-                <input type="text" wire:model="jogadores" id="jogadores" autocomplete="jogadores" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300">
-                {{-- @error('about') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror --}}
-            </div>
-            <div class="col-span-1">
-                <label for="campeonatos" class="text-sm font-medium text-gray-700">Campeonatos</label>
-                <input type="text" wire:model="campeonatos" id="campeonatos" autocomplete="campeonatos" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300">
-                {{-- @error('about') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror --}}
-            </div>
+            {{-- <div class="mt-4">
+                <label for="time" class="text-sm font-medium text-gray-700">Time</label>
+                <select wire:model="campeonato" 
+                class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
+                    <option value=''>Escolha um campeonato</option>
+                    @foreach($championships as $championship)
+                        <option value="{{ $championship->id }}">{{ $championship->nome }}</option>
+                    @endforeach
+                </select>
+
+            </div>  --}}
             <div class="col-span-1">
                 <button type="submit" class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white">Salvar</button>
             </div>

@@ -27,11 +27,6 @@
                 <input type="number" wire:model="vitorias" id="vitorias" autocomplete="vitorias" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300">
                 {{-- @error('about') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror --}}
             </div>
-            <div class="col-span-2">
-                <label for="jogadores" class="text-sm font-medium text-gray-700">Jogadores</label>
-                <input type="text" wire:model="jogadores" id="jogadores" autocomplete="jogadores" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300">
-                {{-- @error('about') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror --}}
-            </div>
             <div class="col-span-1">
                 <label for="campeonatos" class="text-sm font-medium text-gray-700">Campeonatos</label>
                 <input type="text" wire:model="campeonatos" id="campeonatos" autocomplete="campeonatos" class="w-full flex-1 flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300">

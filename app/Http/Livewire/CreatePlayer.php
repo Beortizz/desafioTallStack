@@ -41,6 +41,7 @@ class CreatePlayer extends Component
     public function render()
     {
         $this->players = Player::with('team')->get();
+        $this->teams = Team::all();
         return view('livewire.players');
     }
 
@@ -53,7 +54,7 @@ class CreatePlayer extends Component
         $this->nacionalidade = $player->nacionalidade;
         $this->derrotas = $player->derrotas;
         $this->vitorias = $player->vitorias;
-        $this->time = $player->time;
+        $this->time = $player->time_id;
   
         $this->updateMode = true;
     }

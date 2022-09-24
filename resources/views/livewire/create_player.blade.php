@@ -37,6 +37,7 @@
                         <option value="{{ $team->id }}">{{ $team->nome }}</option>
                     @endforeach
                 </select>
+            </div>
             <div class="col-span-1">
                 <button type="submit" class="bg-blue-500 py-2 px-3 rounded-md shadow-sm text-sm hover:bg-purple-500 font-medium text-white">Salvar</button>
             </div>

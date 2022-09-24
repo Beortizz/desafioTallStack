@@ -20,9 +20,6 @@ return new class extends Migration
             $table->integer('pontuacao');
             $table->integer('vitorias');
             $table->integer('derrotas');
-            $table->string('jogadores');
-            $table->string('campeonatos');
-            
             $table->timestamps();
         });
     }

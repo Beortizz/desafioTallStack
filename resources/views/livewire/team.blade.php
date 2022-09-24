@@ -8,7 +8,6 @@
         @include('livewire.create_team')
     @endif
     
-    
     <section class="bg-white py-20 lg:py-[120px]">
         <div class="container">
            <div class="flex flex-wrap -mx-4">
@@ -221,8 +220,10 @@
                                 border-b border-r border-[#E8E8E8]
                                 "
                                 > 
-                                @foreach($team->players as $player)
-                                    {{ $player->nome }}
+                                @foreach($players as $player)
+                                    @if($player->time_id == $team->id)
+                                       {{ $player->nome }}
+                                    @endif
                                  @endforeach
                              </td>
                              <td
@@ -236,7 +237,9 @@
                              border-b border-r border-[#E8E8E8]
                              "
                              > 
-                                {{ $team->campeonatos }}
+                                @foreach($team->championships as  $championship)
+                                    {{ $championship->nome}}
+                                @endforeach
                           </td>
                              <td
                              class="

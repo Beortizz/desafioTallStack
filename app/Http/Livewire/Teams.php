@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\Team;
+use App\Models\Player;
+use App\Models\Championship;
 use Livewire\Component;
 
 class Teams extends Component
@@ -14,27 +16,39 @@ class Teams extends Component
         public $pontuacao;
         public $vitorias;
         public $derrotas;
-        // public $jogadores;
-        public $campeonatos;
+        public $campeonato;
+        public $players;
+        public $championships;
         public $updateMode = false;
         
+
+        public function mount()
+        {
+            $this->championships = Championship::all();
+            // $this->campeonato = 0;   
+        }
+        
         public function submit(){
-            Team::create([
+            // $campeonatoAtual = Championship::whereid($this->campeonato)->first();
+            $time = Team::create([
                 'nome' => $this->nome,
                 'pais_origem' => $this->pais_origem,
                 'pontuacao' => $this->pontuacao,
                 'vitorias' => $this->vitorias,
                 'derrotas' => $this->derrotas,
                 // 'jogadores' => $this->jogadores,
-                'campeonatos' => $this->campeonatos,
               
             ]);
+
+            // $time->championships()->sync([$campeonatoAtual->id]); 
             $this->reset();
     
         }
         public function render()
         {
+            $this->championships = Championship::all();
             $this->teams = Team::all();
+            $this->players = Player::all();
             return view('livewire.team');
         }
     
@@ -47,8 +61,6 @@ class Teams extends Component
             $this->pontuacao = $team->pontuacao;
             $this->derrotas = $team->derrotas;
             $this->vitorias = $team->vitorias;
-            // $this->jogadores = $team->jogadores;
-            $this->campeonatos = $team->campeonatos;
             
       
             $this->updateMode = true;
@@ -71,8 +83,6 @@ class Teams extends Component
                 'pontuacao' => $this->pontuacao,
                 'vitorias' => $this->vitorias,
                 'derrotas' => $this->derrotas,
-                // 'jogadores' => $this->jogadores,
-                'campeonatos' => $this->campeonatos
             ]);
       
             $this->updateMode = false;

@@ -9,14 +9,14 @@ class Championship extends Model
 {
     protected $fillable= [
       'nome',
-      'jogo'.
+      'jogo',
       'data_inicio',
       'data_final'  
     ];
 
-    public function championships()
+    public function teams()
     {   
-        return $this->belongsToMany(Championship::class)->withTimestamps();
+        return $this->belongsToMany(Team::class)->withTimestamps(); 
         
     }
 }
