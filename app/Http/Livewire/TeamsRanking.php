@@ -19,7 +19,7 @@ class TeamsRanking extends Component
     }
     public function render()
     {
-        return view('livewire.teams-ranking');
+        return view('livewire.teams.teams-ranking');
     }
     public function getTimesPaisOrigem()
     {

@@ -60,12 +60,6 @@ class Championships extends Component
         $this->updateMode = true;
     }
 
-    public function cancel()
-    {
-        $this->updateMode = false;
-        $this->reset();
-    }
-    
     public function update()
     {
   
@@ -95,10 +89,7 @@ class Championships extends Component
 
     public function updateModeFalse()
     {
-        $this->nome = '';
-        $this->jogo = '';
-        $this->data_inicio = '';
-        $this->data_final = '';
+        $this->reset();
         $this->updateMode = false;
     }
 }

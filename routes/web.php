@@ -23,7 +23,6 @@ Route::get('/players', function() {
     return view('player.load-player');
 });
 
-
 Route::get('/teams', function() {
     return view('teams.load-team');
 });

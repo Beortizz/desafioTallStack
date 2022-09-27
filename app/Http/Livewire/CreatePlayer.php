@@ -59,11 +59,6 @@ class CreatePlayer extends Component
         $this->updateMode = true;
     }
 
-    public function cancel()
-    {
-        $this->updateMode = false;
-        $this->reset();
-    }
     
     public function update()
     {
@@ -87,5 +82,10 @@ class CreatePlayer extends Component
     {
         Player::find($id)->delete();
     }
-
+    
+    public function updateModeFalse()
+    {
+        $this->reset();
+        $this->updateMode = false;
+    }
 }

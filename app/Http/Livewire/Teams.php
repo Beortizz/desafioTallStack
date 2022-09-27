@@ -94,4 +94,10 @@ class Teams extends Component
             Team::find($id)->delete();
         }
 
+          public function updateModeFalse()
+    {
+        $this->reset();
+        $this->updateMode = false;
+    }
+
 }

@@ -1,6 +1,7 @@
 
-        <div>
-       
+      <div>
+         @include('livewire.includes.navbar')
+         <div x-data="{ modelOpen: false }">  
             @if($updateMode)
                 @include('livewire.update_player')
             @else
@@ -121,7 +122,7 @@
                                      border-r border-transparent
                                      "
                                      >
-                                
+                                     <button wire:click.prevent="updateModeFalse()" @click="modelOpen = true" type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Criar</button>
                                   </th>
                                   </tr>
                                </thead>
@@ -223,6 +224,7 @@
                                      "
                                      >
                                      <button
+                                        @click="modelOpen = true"
                                         wire:click="edit({{ $player->id}})  "    
                                         class="
                                         border border-primary
@@ -255,4 +257,5 @@
                    </div>
                 </div>
              </section>
-        </div>
+         </div>
+      </div>

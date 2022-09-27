@@ -1,5 +1,6 @@
 <div>
     <!-- component -->
+    @include('livewire.includes.navbar')
     <div x-data="{ modelOpen: false }">   
         @if($updateMode)
             @include('livewire.championships.update_championship')
