@@ -1,7 +1,9 @@
 
 <div>
-    <h1>{{ $championship->nome }}</h1>
-    <h3>De{{ $championship->data_inicio }} até {{ $championship->data_final }}</h3>
+    <center>
+        <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">{{ $championship->nome }}</h1>
+        <h5 class="font-medium leading-tight text-3xl mt-0 mb-2 text-gray-600">De {{ $championship->data_inicio }} até {{ $championship->data_final }}</h3>
+    </center>   
     <section class="bg-white py-20 lg:py-[120px]">
         <div class="container">
             <div class="flex flex-wrap -mx-4">
